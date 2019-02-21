@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// test 检测字串有没有满足条件的字串  true/false 
+			// exec
+			
+			var str = 'hahhababbacadbaffbgar4assaa34';
+			var reg = /a[^a]+/g;
+
+            //不加g是从头匹配
+            //加上全局g 多次匹配时  会从上一次匹配的终点(正则对象的lastIndex)继续匹配
+       /*   
+            console.log(reg.exec(str))  //abb
+            console.log(reg.lastIndex); //6
+			console.log(reg.exec(str))  //acdef
+		    console.log(reg.lastIndex); //15
+			console.log(reg.exec(str))  //null
+		    console.log(reg.lastIndex); //0	
+		    */
+		    var arr=[],i=1;
+		    
+		    while(i!=0){
+		    	var res = reg.exec(str);
+		    	if(res==null){
+		    		i=0;
+		    	}else{
+		    		arr.push(res[0]);
+		    	}
+		    }
+		    console.log(arr);
+		</script>
+	</body>
+</html>

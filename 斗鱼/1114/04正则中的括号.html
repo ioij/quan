@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = 'abb';
+			var reg = /ab+?$/g;
+			//回溯
+			var res = str.match(reg)
+			console.log(res);
+			
+			
+			/*
+			 * ab+?$   abb
+			 * a       a     第一步a与a 匹配成功
+			 * ab+     ab    第二步b+与b匹配成功 
+			 * ab+$    abb   $与b匹配失败
+			 * ab+     ab    回到第二步
+			 * ab+     abb   继续拿b+与b匹配成功  
+			 * ab+$    abb$  拿$与字符串结尾匹配成功
+			 * */
+			
+			//分组   
+			var str = "asdlaskababab";
+			var reg = /(ab)+/;
+			var res = str.match(reg);
+			console.log(res);
+			console.log(RegExp.$1);
+			
+			//分支
+			var str = "helloworld acworld";
+			var reg = /(hello|ac)world/g;
+			var res = str.match(reg);
+			console.log(res);
+			
+			
+			//引用
+			//将2018.11.14改成11/14/2018
+			var str = '今天是2018.11.14';
+			var reg = /(\d{4})\.(\d{2})\.(\d{2})/;
+			
+			var res = str.replace(reg,function(){
+				// 第二个括号里面的内容
+				return RegExp.$2+'/'+RegExp.$3+'/'+RegExp.$1;
+			});
+			// a正则匹配到的整个字串 2018.11.14
+			// year第一个括号所匹配的字串  2018
+			// mon第二个括号所匹配的字串  11
+			// day第三个括号所匹配的字串  14
+			var res = str.replace(reg,function(a,year,mon,day){
+				return mon+'/'+day+'/'+year;
+			});		
+			
+			var res = str.replace(reg,"$3/$2/$1");			
+			console.log(res);
+			
+			
+			//反向引用
+			var str = "acac68686s猪3猪ababadskff马6马jaaa";
+			//  \1表示 第一个括号匹配的内容
+			//  \2表示 第二个括号匹配的内容
+			var reg = /((.).)\1\2/g;  //ababa
+			var res = str.match(reg);
+			console.log(res);
+			
+			
+		</script>
+	</body>
+</html>

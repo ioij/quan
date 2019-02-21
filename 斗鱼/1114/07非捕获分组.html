@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//在括号内加上?:   (?:) 表示这个括号里面的内容不参与引用
+			var str = 'ababab9abcdefababab99';
+			
+			var reg = /(ab)+(\w)\1/;     //ab 和 \w 参与引用
+			var res = str.match(reg);
+			console.log(res);
+			
+			var reg = /(?:ab)+(\w)\1/;   // ab不参与引用
+			var res = str.match(reg);
+			console.log(res);
+			
+		</script>
+	</body>
+</html>
