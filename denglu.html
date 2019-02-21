@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul{list-style:none;}
+			.zuida{width: 600px;height:900px;margin: 0 auto;}
+			.diyi{width:133px;height: 30px;margin: 20px auto 40px;background: url(img/huawei_logo.png) no-repeat;}
+			.dier{width: 540px;height: 700px;margin: 0 auto;box-shadow:2px 0px 46px rgba(0,0,0,0.18);overflow: hidden;}
+			.dier>#ip{width: 362px;height: 500px;margin:80px auto;}
+			.dier>#ip>h1{width:362px;height: 60px;font-size:44px;margin-bottom:24px;}
+			.dier>#ip>p{width: 362px;height:20px;margin-top: 20px;}
+			.dier>#ip>input{width: 350px;height:45px;border-radius:10px;border:1px solid #d4d4d4;margin:10px 0 10px;outline:none;padding-left: 5px;box-sizing: border-box;}
+			
+			#ip>ul{width:350px;height: 200px;margin: 0 auto;}
+			#ip>ul>li{width:100%;height: 45px;margin-top: 10px;}
+			#ip li:nth-child(1){border-radius:10px;margin-top: 40px;line-height: 45px;text-align: center;color: #fff;background: chocolate;cursor:pointer;}
+			#ip li:nth-child(2){height:50px;border-bottom:1px solid #D4D4D4;overflow: hidden;}
+			#ip li:nth-child(2)>a{width:82px;border-bottom:1px solid #000;margin: 10px auto;cursor: pointer;}
+			#ip li:nth-child(3){height:90px;text-align: center;} 
+			#ip div{width: 100px;height: 40px;margin:10px auto;}
+			.box a{width: 39px;height: 39px;float: left;margin-left: 10px;cursor: pointer;}
+			.box a:nth-child(1){background-image: url(img/sprite.png);background-position:-39px -248px;}
+			.box a:nth-child(2){background-image: url(img/sprite.png);background-position:0 -248px;}
+			#ip i{width: 20px;height: 20px;background: url(img/sprite.png);background-position:0 -291px;float: left;margin-right:12px;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="zuida">
+			<div class="diyi"></div>
+			<div class="dier">
+				<div id="ip">
+					<h1>登录</h1>
+					<p>账号/邮箱</p>
+					<input type="text" name="pos" id="pos" value="" />
+					<p>密码*</p>
+					<input type="password" name="" id="er" value="" />
+					
+					<ul>
+						<li id="dl">登录</li>
+						<li><a href="http:zhuche.html">立即注册 ></a></li>
+						<li><p>其他登陆方式：</p><div class="box"><a></a><a></a></div></li>
+						<li><i></i>获取更多帮助? </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var dis = document.getElementById('dl');
+			var box = document.getElementById('pos');
+			var pox = document.getElementById('er');
+			dis.onclick=function(s){
+				var a = box.value;
+				var b = pox.value;
+			    if(Cookie.get(a)==b){
+			    	alert('登录成功')
+			    	location.href='http:zhuye.html';
+			    }else{
+			    	alert('亲，没有注册哦！')
+			    }
+               
+             }
+		</script>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
